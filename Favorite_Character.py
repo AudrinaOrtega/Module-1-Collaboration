@@ -31,19 +31,34 @@ toy_story_morality = {
 
 
 
-#Future refrence: Loop it when you have the chance
+#While true keeps it in a loop so that it just doesn't stop running after one input
 while True:
 
-    name = input("Put in a character from Toy Story: ").title()
+#asking for an input (hopefully from the list)
+    name = input("Put in a character from Toy Story (type quit to exit): ").title()
 
+#first if is to close the program if quit is entered
     if name == "Quit":
         print("have a good day!")
         break
+#checking to see if the name is in their, first checking if it's in the good
+#if it is, then it pulls the age from the name and prints it
+#then (to add a boolean example) I had it check if it was under the age of 35
     if name in toy_story_morality["Good"]:
         age = toy_story_morality["Good"][name]
         print(f"{name} was found, they're good and {age}")
+        print(f"in five years {name}")
+        Under_Age = age < 35
+        print(f"Is {name} under 35? {Under_Age}")
+#then it checks if it's in the other category, if it can't find the name in the good
+#basically the same code from the first check
     elif name in toy_story_morality["Evil"]:
         age = toy_story_morality["Evil"][name]
         print(f"{name} was found, they're good and {age}")
+        Under_Age = age < 35
+        print(f"Is {name} under 35? {Under_Age}")
+#finally, if it can't find the name in either, it loops asking the person to retype it in
     else:
         print("Oops! try retyping it, or character wasn't found in system!")
+
+#not my best work, but to be fair, I wasn't going to go into too much precision
