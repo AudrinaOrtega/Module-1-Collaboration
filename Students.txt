@@ -1,0 +1,6 @@
+students = [
+    {"last_name": "Smith", "first_name": "John", "gpa": 3.5},
+    {"last_name": "Doe", "first_name": "Jane", "gpa": 3.8},
+    {"last_name": "Brown", "first_name": "Charlie", "gpa": 3.2},
+    {"last_name": "Brown", "first_name": "David", "gpa": 3.2}
+]
