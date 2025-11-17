@@ -1,3 +1,4 @@
+#had Copilot create the dictionary of characters 
 toy_story_morality = {
     "Good": {
         "Woody": 70,                 # 1950s pull-string cowboy doll
@@ -10,7 +11,7 @@ toy_story_morality = {
         "Hamm": 30,                  # 1990s piggy bank
         "Mr. Potato Head": 70,       # First sold in 1952
         "Mrs. Potato Head": 70,      # Introduced shortly after Mr. Potato Head
-        "Aliens (Little Green Men)": 30, # 1990s arcade prize toys
+        "Aliens": 30, # 1990s arcade prize toys
         "Andy": 17,                  # Teenager in Toy Story 3
         "Bonnie": 5,                 # Young child in Toy Story 3 & 4
         "Forky": 0.1,                # Handmade in Toy Story 4
@@ -30,35 +31,25 @@ toy_story_morality = {
 }
 
 
-
-#While true keeps it in a loop so that it just doesn't stop running after one input
 while True:
-
-#asking for an input (hopefully from the list)
     name = input("Put in a character from Toy Story (type quit to exit): ").title()
 
-#first if is to close the program if quit is entered
     if name == "Quit":
-        print("have a good day!")
+        print("Have a good day!")
         break
-#checking to see if the name is in their, first checking if it's in the good
-#if it is, then it pulls the age from the name and prints it
-#then (to add a boolean example) I had it check if it was under the age of 35
+
     if name in toy_story_morality["Good"]:
         age = toy_story_morality["Good"][name]
-        print(f"{name} was found, they're good and {age}")
-        print(f"in five years {name}")
-        Under_Age = age < 35
-        print(f"Is {name} under 35? {Under_Age}")
-#then it checks if it's in the other category, if it can't find the name in the good
-#basically the same code from the first check
+        morality = "good"
     elif name in toy_story_morality["Evil"]:
         age = toy_story_morality["Evil"][name]
-        print(f"{name} was found, they're good and {age}")
-        Under_Age = age < 35
-        print(f"Is {name} under 35? {Under_Age}")
-#finally, if it can't find the name in either, it loops asking the person to retype it in
+        morality = "evil"
     else:
         print("Oops! try retyping it, or character wasn't found in system!")
+        continue
 
-#not my best work, but to be fair, I wasn't going to go into too much precision
+    print(f"{name} was found, they're {morality} and {age}")
+    print(f"In five years {name} will be {age + 5} years old")
+    print(f"Is {name} under 35? {age < 35}")
+#not my best work but to be fair I wasn't going to go into too much precision
+
